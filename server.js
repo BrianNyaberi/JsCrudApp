@@ -25,17 +25,8 @@ app.use('/js', express.static(path.resolve(__dirname, "assets/js")))
 // set view engine
 app.set("view engine","ejs")
 
-app.get('/',(req,res)=>{
-    res.render('index');
-})
-
-app.get('/add-user',(req,res)=>{
-    res.render('add_user');
-})
-
-app.get('/update-user',(req,res)=>{
-    res.render('update_user');
-})
+// load routes
+app.use('/', require('./server/routes/router'))
 
 // http server
 app.listen(PORT,()=>{console.log(`Server is runnig on http://localhost:${PORT}`)});
