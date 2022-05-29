@@ -1,30 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <title>CRUD Application</title>
-</head>
-
-<body>
-    <!-- header -->
-    <header id="header">
-        <nav>
-            <div class="container">
-                <div class="text-center">
-                    <a href="/" class="nav-brand text-dark">User Managment System</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- </header> -->
+<!-- include header -->
+<%- include('include/_header') %>
+    <!-- /include header -->
 
     <!-- main  -->
     <main class="site-main">
@@ -36,12 +12,12 @@
             </div>
 
             <div class="form-title text-center">
-                <h2 class="text-dark">New User</h2>
-                <span class="text-light">Use the below form to create a new account</span>
+                <h2 class="text-dark">Update User</h2>
+                <span class="text-light">Use the below form to update an account</span>
             </div>
 
-            <!-- form handling    id="update_user" -->
-            <form action="/" method="post" id="add_user">
+            <!-- form handling -->
+            <form action="/" method="post" id="update_user">
                 <div class="new_user">
                     <div class="form-group">
                         <label for="name" class="text-light">Name</label>
@@ -86,7 +62,6 @@
     </main>
     <!-- /main  -->
 
-
-</body>
-
-</html>
+    <!-- include footer -->
+    <%- include('include/_footer') %>
+        <!-- /include footer -->
