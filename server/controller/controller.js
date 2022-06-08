@@ -30,7 +30,13 @@ exports.create = (req, res) => {
 
 // retrive and return a user(s)
 exports.find = (req, res) => {
-    
+    Userdb.find()
+    .then(user =>{
+        res.send(user)
+    })
+    .catch(err =>{
+        req.status(500).send({message:err.message || "error occured while retring user information."})
+    })
 }
 
 // update a user
