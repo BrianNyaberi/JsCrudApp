@@ -2,7 +2,10 @@ var Userdb = require('../model/model')
 
 // create a new user
 exports.create = (req, res) => {
-    
+    // check for empty request
+    if(){
+        
+    }
 }
 
 // retrive and return a user(s)
