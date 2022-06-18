@@ -50,27 +50,37 @@ exports.update = (req, res) => {
     }
 
     const id = req.params.id
-    Userdb.findByIdAndUpdate(id, req.body, {userFindAndModify: false})
-    .then(data => {
-        if (data) {
-            res.status(404).send({message: "Cannot update user with $(id). User not found!"})
-        } else {
-            res.send(data)
-        }
-    })
-    .catch(err => {
-        res.status(500).send({message: "Error occured whle updating user information."})
-    })
+    Userdb.findByIdAndUpdate(id, req.body, { userFindAndModify: false })
+        .then(data => {
+            if (data) {
+                res.status(404).send({ message: "Cannot update user with $(id). User not found!" })
+            } else {
+                res.send(data)
+            }
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Error occured whle updating user information." })
+        })
 }
 
 // delete a user
 exports.delete = (req, res) => {
     const id = req.params.id;
 
+    // Validate request - can't be empty
     Userdb.findByIdAndDelete(id)
         .then(data => {
-            if(!data){
-                
+            if (!data) {
+                res.status(404).send({ message: "Cannot delete with id ${id}. maybe id is wrong!" })
+            } else {
+                res.send({
+                    message: "User deleted successfully!"
+                })
             }
         })
-}
+        .catch(err => {
+            res.status(500).send({
+                message: "Could not delete User with id=" + id
+            })
+        })
+} 
