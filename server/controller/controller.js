@@ -65,5 +65,12 @@ exports.update = (req, res) => {
 
 // delete a user
 exports.delete = (req, res) => {
+    const id = req.params.id;
 
+    Userdb.findByIdAndDelete(id)
+        .then(data => {
+            if(!data){
+                
+            }
+        })
 }
