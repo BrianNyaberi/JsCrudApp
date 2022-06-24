@@ -9,19 +9,18 @@
   },
   "keywords": [
     "crud",
-    "mongodb",
-    "express"
+    "mongodb"
   ],
-  "author": "Tech Savvy",
+  "author": "akshay kashyap",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.27.2",
-    "body-parser": "^1.20.0",
-    "dotenv": "^16.0.1",
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "mongoose": "^6.3.3",
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.6.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.11",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.6"
   }
 }
